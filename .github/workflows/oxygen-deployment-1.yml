@@ -45,8 +45,8 @@ jobs:
           oxygen_deployment_token: ${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_1 }}
           build_command: "HYDROGEN_ASSET_BASE_URL=$OXYGEN_ASSET_BASE_URL yarn build"
           oxygen_dms_address: oxygen-dms-staging.shopifycloud.com
-          oxygen_commit_message: ${{ format('{0}', github.event.head_commit.message) }}
-          oxygen_commit_timestamp: ${{ format('{0}', github.event.head_commit.timestamp) }}
+          commit_message: ${{ format('{0}{1}', github.event.head_commit.message, steps.time.outputs.time) }}
+          commit_timestamp: ${{ format('{0}{1}', github.event.head_commit.timestamp, steps.time.outputs.time) }}
 
       # Create GitHub Deployment
       - name: Create GitHub Deployment
