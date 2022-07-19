@@ -2,11 +2,12 @@
 #! oxygen_storefront_id: 1
 
 name: Storefront 1
-on: [push]
+on: [push, workflow_dispatch]
 
 permissions:
   contents: read
   deployments: write
+  actions: write
 
 jobs:
   deploy:
