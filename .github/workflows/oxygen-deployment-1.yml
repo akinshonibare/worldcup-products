@@ -37,6 +37,9 @@ jobs:
       - name: Install dependencies
         id: 'install-dependencies'
         run: yarn
+        
+      - name: Echo github obj
+        run: echo ${{ toJson(github) }}
 
       - name: Build and Publish to Oxygen
         id: deploy
